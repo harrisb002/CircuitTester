@@ -1,0 +1,14 @@
+P1.exe : circuit.o myBad.o
+	g++ -o P1.exe circuit.o myBad.o
+
+myBad.o : myBad.cpp circuit.h
+	g++ -g -c myBad.cpp
+
+circuit.o : circuit.cpp circuit.h
+	g++ -g -c circuit.cpp
+
+clean :
+	rm -rf *.o P1.exe
+
+
+
